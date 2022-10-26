@@ -5,14 +5,14 @@ import java.util.Scanner;
     public static void main(String[] args){
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("Ingresa el tamaño del arreglo:");
+        System.out.println("Ingrese el tamanio del arreglo:");
 
         int tam = sc.nextInt();
 
         int[] arreglo = new int[tam];
 
         for (int i = 0; i < arreglo.length; i++){
-            System.out.println("Ingresa un numero para la pisicion " + i + " del arreglo: ");
+            System.out.println("Ingresa un numero para la posicion " + i + " del arreglo: ");
             arreglo [i] = sc.nextInt();
         }
 
@@ -21,7 +21,7 @@ import java.util.Scanner;
             System.out.println("arreglo["+y+"] = " + arreglo [y]);
         }
         
-        int num_buscado = 5;
+        int num_bus = 10;
         int inferior = 0;
         int centro;
         int superior = tam - 1;
@@ -29,21 +29,17 @@ import java.util.Scanner;
         while(inferior <= superior){
             centro = (superior + inferior)/2;
             
-            if(arreglo[centro] == num_buscado){
+            if(arreglo[centro] == num_bus){
                 System.out.println("El numero buscado esta en la posicion " + centro);
                 break;
                 
-            }else if(num_buscado < arreglo[centro]){
+            }else if(num_bus < arreglo[centro]){
                 superior = centro - 1;
             }else{
                 inferior = centro + 1;
             }
         }
 
-        /*//for (int e = 0; e < arreglo.length; e++){
-            if (arreglo[e] == num_buscado){
-                System.out.println("El numero solicitado esta en la posicion "+ e);
-            }
-        }*/
+        
     }
 }
